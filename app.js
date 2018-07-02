@@ -23,13 +23,11 @@ app.get("/", (req, res) => {
 
 // GET /books
 app.get("/books", (req, res) => {
-  console.log(req);
   res.send(books);
 });
 
 // GET /books/:id
 app.get("/books/:id", (req, res) => {
-  console.log(req.params);
   const requestedBook = books.find(book => {
     return book.id == req.params.id;
   });
@@ -38,7 +36,6 @@ app.get("/books/:id", (req, res) => {
 
 // POST /books
 app.post("/books", (req, res) => {
-  console.log(req.body);
   books = [...books, req.body];
   res.send(books);
 });
